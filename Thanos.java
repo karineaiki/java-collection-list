@@ -37,22 +37,24 @@ public class Thanos {
             }
         }
 
-        System.out.println(heroes);
-
         // Utiliser shuffle
         Collections.shuffle(heroes);
-
-        System.out.println(heroes);
 
         // Utiliser subList pour ne retourner que la moitié de la liste
         List<Hero> halfHeroes = heroes.subList(1, 4);
 
         System.out.println(halfHeroes);
 
-        //Récupérer les noms des héros
+        // Récupérer les noms des héros
         for(int i=0; i< halfHeroes.size(); i++) {
             Hero hero = halfHeroes.get(i);
             System.out.println(hero.getName());
         }
+
+        Collections.sort(heroes);
+        System.out.println(heroes);
+
+        Collections.sort(heroes, new AgeComparator());
+        System.out.println(heroes);
     }
 }
